@@ -32,7 +32,7 @@ void empilha (int dado, PILHA *p)
         ptr->dado = dado;
         ptr->prox = p->topo;
         p->topo = ptr;
-        PILHA->tam++;
+        //p->tam++;
     }
 }
 
