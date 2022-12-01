@@ -2,3 +2,11 @@ boa note
 gente
 
 como libera memoria de vetor? na 3 - vini
+r = remover(&fila); //r recebe remocao da lista
+
+            if(r){
+                printf("Removido: %d\n",r->valor); //Printar valor removido
+            }
+                free(r); //Liberar memoria
+            system("pause"); //Pausar o terminal
+            break;
