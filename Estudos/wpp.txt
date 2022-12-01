@@ -1,2 +1,4 @@
 boa note
 gente
+
+como libera memoria de vetor? na 3 - vini
