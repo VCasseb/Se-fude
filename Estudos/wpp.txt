@@ -29,3 +29,4 @@ No* remover(No **fila){
 
 
 vc usaram PONTEIROS ou vetores na 2 e 3? Eu to usando so ponteiros
+na 3 usei vetor, na 2 eu n consigo fazer nada
