@@ -25,3 +25,7 @@ No* remover(No **fila){
 
     return remover; //Retornar remocao
 }
+
+
+
+vc usaram PONTEIROS ou vetores na 2 e 3? Eu to usando so ponteiros
