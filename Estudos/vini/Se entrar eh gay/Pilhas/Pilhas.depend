@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1669918394 source:c:\users\vini\desktop\sumes\pilhas\main.c
+	<stdio.h>
+	<stdlib.h>
+

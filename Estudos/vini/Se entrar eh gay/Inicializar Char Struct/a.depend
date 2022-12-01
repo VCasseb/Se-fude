@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1669666335 source:c:\users\vini\desktop\sumes\a\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
