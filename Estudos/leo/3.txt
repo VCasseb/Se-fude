@@ -1,0 +1,130 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//03 utlizando FIFO
+typedef struct no{
+
+    int valor;
+    struct no *proximo; //passando para o proximo item
+
+}No;
+//declaraçao das funcoes
+void inserir(No **fila, int num); //funcao de insercao
+No* remover(No **fila); //fazer a remocao
+void imprimir(No *fila); //funcao para imprimir
+void limpar_tela(); //limpar a tela
+
+int main()
+{
+    int tt,i=0;
+    No *r, *fila = NULL; //remover e Fila
+
+    int opc,valor[10]; //vetor de 10 posicoes do tipo int
+
+    do{ //loop
+        limpar_tela();//funcao limpa tela
+
+        printf("1- INSERIR\n");
+        printf("2- REMOVER\n");
+        printf("3- IMPRIMIR\n");
+        printf("0- SAIR\n");
+
+        scanf("%d",&opc);//armazenando variavel opc
+
+        switch(opc){ //entrando nos cases
+
+        case 1:
+            for(int i=0;i<=10;i++){ //loop para pegar os valores e armazenalos dentro do vetor valor
+
+                printf("Digite o valor [%d]: ",i);
+                scanf("%d",&valor[i]); //valor do usuario
+                inserir(&fila,valor[i]); //Valor do usuario como parametro para insercao no No
+            }
+            system("pause"); //Pausar o terminal para uma melhor visualizacao
+            break;
+
+        case 2:
+            r = remover(&fila); //r recebe remocao da lista
+
+            if(r){
+                printf("Removido: %d\n",r->valor); //Printando valor removido
+            }
+                free(r); //liberando memoria
+                system("pause"); //Pausar
+            break;
+
+        case 3:
+            imprimir(fila); //impressao da Fila
+
+            while(fila){ //para printar a fila
+            i++;
+            fila = fila->proximo; //Printar Proximo No
+    }
+            system("pause"); //Pausar o terminal
+            break;
+
+        default:
+            if(opc != 0){
+                printf("Opc invalida\n"); //impressao caso opcao errada
+                system("pause"); //Pausar
+            }
+        }
+    }while(opc != 0); //0 para sair do While
+
+    return 0;
+}
+
+void inserir(No **fila, int num){ //valor do usario num
+
+    No *aux,*novo = malloc(sizeof(No)); //alocar memoria para o ponteiro
+    if(novo){ //criando um no caso nao tenha
+        novo->valor = num; //receber valor do usuario
+        novo->proximo = NULL; //Caso seja o primeiro No, apontar NULL para o proximo
+
+        if(*fila == NULL) //receber valor do usuario para criar uma fila
+            *fila = novo;
+
+            else{ //Caso ja exista um No, criar proxima posicao
+            aux = *fila;
+            while(aux->proximo)
+                aux = aux->proximo; //Variavel aux serve para criar o proximo
+                aux->proximo = novo;
+        }
+
+    }
+    else
+        printf("Erro ao alocar\n"); //erro caso n consiga alocar memoria
+}
+
+No* remover(No **fila){
+    No *remover = NULL; //Ponteiro remover tendo NULL
+
+    if(*fila){
+        remover = *fila;
+        *fila = remover->proximo;
+    }
+    else
+        printf("Fila Vazia\n");
+
+    return remover; //Retornar remocao
+}
+
+void imprimir(No *fila){
+    int soma_1,soma_2,tt;
+    if(fila == NULL)
+        printf("Vazio...\n"); //se nao tiver nenhum valor
+    else{
+    printf("\n\n----- Inicio Fila ----\n\n");
+    while(fila){
+
+        printf("%d\n",fila->valor); //Printar
+        fila = fila->proximo; //Printar Proximo No
+    }
+    printf("\n---- Fim Fila ----\n\n");
+    }
+}
+
+
+void limpar_tela(){
+    system("cls"); //Funcao para limpar a tela
+}
