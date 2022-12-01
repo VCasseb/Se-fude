@@ -10,3 +10,18 @@ r = remover(&fila); //r recebe remocao da lista
                 free(r); //Liberar memoria
             system("pause"); //Pausar o terminal
             break;
+
+funcao usada foi essa aqui
+
+No* remover(No **fila){
+    No *remover = NULL; //Ponteiro remover tendo NULL
+
+    if(*fila){ //Remover
+        remover = *fila;
+        *fila = remover->proximo;
+    }
+    else
+        printf("Fila Vazia\n"); //Caso n exista nenhum dado
+
+    return remover; //Retornar remocao
+}
