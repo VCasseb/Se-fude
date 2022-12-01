@@ -32,3 +32,6 @@ vc usaram PONTEIROS ou vetores na 2 e 3? Eu to usando so ponteiros
 na 3 usei vetor, na 2 eu n consigo fazer nada
 
 maluco to perdido fiz a 1 e travei na 2 e na 3 K - 0
+
+
+eu fiz a 2 com vetor, n sei se pode
