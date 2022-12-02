@@ -39,3 +39,6 @@ eu fiz a 2 com vetor, n sei se pode
 eu mandei a 3 na minha pastinha de gay aqui po
 
 n sei se eh desse jeito, pq n faz sentido usar vetores com ponteiros
+
+entao n sei, so deletei o de liberar espaco e seja o q deus quiser, 
+agora falta a merda da 2
