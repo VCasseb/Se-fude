@@ -42,3 +42,7 @@ n sei se eh desse jeito, pq n faz sentido usar vetores com ponteiros
 
 entao n sei, so deletei o de liberar espaco e seja o q deus quiser, 
 agora falta a merda da 2
+
+
+
+Leo, tenta deixar a 1 mto diferente, se usou o meu como base. A 3 sua tava mto igual a minha, mudei mta coisa
