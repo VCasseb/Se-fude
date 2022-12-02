@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//LIFO
+int main()
+{
+    int valor[10],opc,i=0,tam=0; //valor do usuario, opc.
+
+    do
+    {
+        printf("<1> - Inserir\n<2> - Excluir\n<3> - Imprimir\n<0> - Sair");//menu
+        printf("\n\n---> ");
+        scanf("%d",&opc);// opc do usuario
+
+        switch(opc)
+        {
+
+        case 1:
+            printf("Digite um valor: ");
+            scanf("%d",&valor[i]);//valor do usuario
+            if(valor[i] <0){ //caso seja negativo
+                printf("\nDigite um numero valido!\n\n");
+                break;
+            }
+            i++;//usado para posicao
+            tam++;//usado para somar tamanho
+            break;
+
+        case  2:
+            if(tam == 0){//caso tamanho 0, printar vazio
+                printf("\nVazio...\n\n");
+                break;
+            }
+            printf("\nValor excluido: %d\n",valor[i-1]);
+            valor[i-1] = NULL;//atribuir NULL para posicao do vetor
+            i--; //subtrair posicao
+            tam--; //subtrair tamanho
+            break;
+
+        case 3:
+            if(tam == 0){//caso tam 0, printar vazio
+                printf("\nVazio...\n\n");
+                break;
+            }
+            printf("Tam: %d",tam);//tamanho
+            printf("\n----Inicio Pilha----\n");
+            for(int j=0; j<tam; j++)//printar posicoes
+            {
+                printf("%d\n",valor[j]);
+            }
+            printf("\n----Fim Pilha----\n");
+            break;
+
+        default:
+            if(opc != 0)//caso opc invalida
+                printf("\nOpc invalida!");
+            break;
+        }
+    }
+    while(opc != 0);
+
+    return 0;
+}
